@@ -1,0 +1,9 @@
+<%= form_with model:@idea, local: true do |f| %>
+  <div class="form-group">
+    <label class="form-text">カテゴリ</label>
+    <%= f.text_area :category_name, class:'category-input', placeholder:"カテゴリを入力" %>
+    <label class="form-text">アイデア</label>
+    <%= f.text_area :body, class:'idea-input',placeholder:"アイデアを入力" %>
+  </div>
+
+<% end %>
