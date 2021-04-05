@@ -1,9 +1,11 @@
-<%= form_with model:@idea, local: true do |f| %>
+<%= form_with model: @category_idea, url: ideas_path, local: true do |f| %>
   <div class="form-group">
     <label class="form-text">カテゴリ</label>
     <%= f.text_area :category_name, class:'category-input', placeholder:"カテゴリを入力" %>
     <label class="form-text">アイデア</label>
     <%= f.text_area :body, class:'idea-input',placeholder:"アイデアを入力" %>
+    <div class="submit">
+      <%= f.submit "送信", class: 'submit-btm' %>
+    </div>
   </div>
-
 <% end %>
