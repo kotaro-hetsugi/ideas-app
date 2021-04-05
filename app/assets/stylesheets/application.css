@@ -2,6 +2,11 @@ h1 {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .new-content{
   text-align: center;
 }
@@ -15,7 +20,7 @@ h1 {
 }
 
 .category-input{
-  width: 300px;
+  width: 500px;
 }
 
 .idea-input{
@@ -24,6 +29,6 @@ h1 {
 }
 
 .submit-btm {
-  width: 100px;
+  width: 150px;
   height: 50px;
 }

@@ -8,7 +8,8 @@ class CategoryIdea
   end
 
   def save
-    category = Category.create(name: category_name)
+    category = Category.where(name: category_name).first_or_initialize
+    category.save
     Idea.create(body: body,category_id: category.id)
   end
 
