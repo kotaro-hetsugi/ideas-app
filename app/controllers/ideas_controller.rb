@@ -7,8 +7,9 @@ class IdeasController < ApplicationController
   end
 
   def create
-    category_idea = CategoryIdea.new(category_idea_params)
-    if category_idea.save
+    @category_idea = CategoryIdea.new(category_idea_params)
+    if @category_idea.valid?
+      @category_idea.save
       redirect_to root_path
     else
       render :new
