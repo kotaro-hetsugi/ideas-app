@@ -1,3 +1,31 @@
 <div class="new-content" >
-  <%= link_to '新規アイデア', new_idea_path %>
+  <%= link_to '新規アイデア作成', new_idea_path, {class: 'new-btn'} %>
+</div>
+
+<div class="columns">
+アイデア一覧
+  <div class="column-header">
+    <div class="column-left">
+      <%= "No." %>
+    </div>
+    <div class="column-center">
+      <%= "カテゴリ" %>
+    </div>
+    <div class="column-right">
+      <%= "アイデア" %>
+    </div>
+  </div>
+  <% @ideas.each do |idea| %>
+    <div class="column">
+      <div class="column-left">
+        <%= idea.id %>
+      </div>
+      <div class="column-center">
+        <%= idea.category.name %>
+      </div>
+      <div class="column-right">
+        <%= idea.body %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
-  def index 
+  def index
+    @ideas = Idea.all
   end
 
   def new
@@ -19,6 +20,6 @@ class IdeasController < ApplicationController
   private
 
   def category_idea_params
-    params.require(:category_idea).permit(:category_name, :body)#.merge(category_id: category_id)
+    params.require(:category_idea).permit(:category_name, :body)
   end
 end
