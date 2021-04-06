@@ -18,7 +18,8 @@ class IdeasController < ApplicationController
   end
 
   def search
-    @ideas = Ideas.category.search(params[:keyword])
+    @ideas = Idea.search(params[:keyword])
+    # binding.pry
   end
 
   private
