@@ -8,7 +8,13 @@ class Idea < ApplicationRecord
       category.ids.each do |c|
         ideas = Idea.where('category_id LIKE(?)' ,"#{c}")
       end
-      return ideas
+
+      if ideas != ''
+        return ideas 
+      else
+        return category
+      end
+      
     else
       Idea.all
     end

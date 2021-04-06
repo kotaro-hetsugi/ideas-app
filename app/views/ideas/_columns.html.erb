@@ -1,0 +1,31 @@
+<div class="columns">
+アイデア一覧
+  <%= form_with(url: search_ideas_path, local: true, method: :get, class: "search-form") do |f| %>
+    <%= f.text_field :keyword, placeholder: "カテゴリを入力", class: "search-input" %>
+    <%= f.submit "絞り込み", class: "search-btn" %>
+  <% end %>
+  <div class="column-header">
+    <div class="column-left">
+      <%= "No." %>
+    </div>
+    <div class="column-center">
+      <%= "カテゴリ" %>
+    </div>
+    <div class="column-right">
+      <%= "アイデア" %>
+    </div>
+  </div>
+  <% @ideas.each do |idea| %>
+    <div class="column">
+      <div class="column-left">
+        <%= idea.id %>
+      </div>
+      <div class="column-center">
+        <%= idea.category.name %>
+      </div>
+      <div class="column-right">
+        <%= idea.body %>
+      </div>
+    </div>
+  <% end %>
+</div>
