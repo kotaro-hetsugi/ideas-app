@@ -4,6 +4,10 @@
 
 <div class="columns">
 アイデア一覧
+  <%= form_with(url: '#', local: true, method: :get, class: "search-form") do |f| %>
+    <%= f.text_field :keyword, placeholder: "カテゴリを入力", class: "search-input" %>
+    <%= f.submit "絞り込み", class: "search-btn" %>
+  <% end %>
   <div class="column-header">
     <div class="column-left">
       <%= "No." %>
