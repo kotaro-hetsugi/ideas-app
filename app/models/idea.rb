@@ -3,18 +3,10 @@ class Idea < ApplicationRecord
 
   def self.search(search)
     if search != ''
-      category = Category.where('name LIKE(?)', "#{search}" )
-      ideas = ''
-      category.ids.each do |c|
-        ideas = Idea.where('category_id LIKE(?)' ,"#{c}")
-      end
-
-      if ideas != ''
-        return ideas 
-      else
-        return category
-      end
-      
+      category = Category.where('name LIKE(?)', "#{search}" )         # 完全一致
+      ideas = Idea.where('category_id LIKE(?)' ,"#{category.ids[0]}")
+      ideas = [] if ideas == ''
+      return ideas
     else
       Idea.all
     end
