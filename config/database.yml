@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: medpeer_idea_app_development
+  database: ideas_app_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: medpeer_idea_app_test
+  database: ideas_app_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: medpeer_idea_app_production
-  username: medpeer_idea_app
-  password: <%= ENV['MEDPEER_IDEA_APP_DATABASE_PASSWORD'] %>
+  database: ideas_app_production
+  username: ideas_app
+  password: <%= ENV['ideas_app_DATABASE_PASSWORD'] %>
